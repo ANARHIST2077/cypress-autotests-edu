@@ -10,14 +10,5 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Install Cypress binary
-        run: npx cypress install
-      
-      - name: Fix permision
-        run: chmod -R 755 node_modules/.bin
-
       - name: Run Cypress tests
-        run: npx cypress run
+        uses: cypress-io/github-action@v6
