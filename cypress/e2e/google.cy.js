@@ -1,7 +1,8 @@
 describe('Тест Гугла', () => {
   it('Открыть гугл, проверить титул', () => {
-    cy.visit('https://www.google.com')
-    cy.title()
-      .should('include','Google')
+    cy.fixture('data').then((data) => {
+      cy.openGoogle(data.url)
+      cy.title().should("include",data.title)
+    })
   })
 })
