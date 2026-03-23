@@ -29,8 +29,13 @@ export class Page {
             .click()
     }
 
-    clickBtnAPI(){
+    clickBtnAPICypress(){
         cy.get('.navbar-nav').children().eq(2).find('a')
+            .should('be.visible')
+            .click()
+    }
+    clickBtnSignalMySite(){
+        cy.get('#refresh-btn')
             .should('be.visible')
             .click()
     }
