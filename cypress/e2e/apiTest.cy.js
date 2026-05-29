@@ -5,6 +5,7 @@ describe('сайт с API', () => {
       const page = new Page()
       
         page.visit(data.serverUrlAPI)
+        cy.get('.header').should('be.visible')
         page.clickBtnNetwork()
         page.mockedUser()
         page.checkNameMockedUser('ТЕСТОВЫЙ')
