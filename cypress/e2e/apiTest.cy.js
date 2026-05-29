@@ -4,9 +4,9 @@ describe('сайт с API', () => {
     cy.fixture('data').then((data) => {
       const page = new Page()
       
-        cy.intercept('GET', '**api*').as('load')
-        page.visit(data.serverUrlAPI)
-        cy.wait('@load')
+        cy.intercept('GET', '**').as('all')
+        cy.visit(data.serverUrlAPI)
+        cy.wait('@all')
         cy.get('.header').should('be.visible')
         page.clickBtnNetwork()
         page.mockedUser()
